@@ -7,6 +7,12 @@ body {
   line-height: 18px;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

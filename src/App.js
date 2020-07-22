@@ -1,42 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { PageSingUp } from './pages/sing-up';
+import { PageSingIn } from './pages/sing-in';
 
-import './App.scss';
 import "normalize.css";
+import './App.scss';
 
 class App extends Component {
-  render() {
-    return (
-        <div className={"app-container"}>
-          <Router>
-            <Switch>
-              <Route
-                  exact
-                  path="/">
-                <p>Main</p>
-              </Route>
-              <Route
-                  path="/sing-in">
-                <p>sing-in</p>
-              </Route>
-              <Route
-                  path="/sing-up">
-                <p>sing-up</p>
-              </Route>
-              <Route
-                  path="/success-in">
-                <p>success-in</p>
-              </Route>
-              <Route
-                  path="/success-up">
-                <p>success-up</p>
-              </Route>
-            </Switch>
-          </Router>
-        </div>
-        )
-  }
-
   constructor(props) {
     super(props);
 
@@ -45,6 +15,31 @@ class App extends Component {
     }
 
     this.state = this.initialState;
+  }
+
+  render() {
+    return (
+        <div className={"app-container"}>
+          <Router>
+            <Switch>
+              <Route
+                  exact
+                  path="/">
+                <PageSingIn/>
+                <PageSingUp/>
+              </Route>
+              <Route
+                  path="/sing-in">
+                <PageSingIn/>
+              </Route>
+              <Route
+                  path="/sing-up">
+                <PageSingUp/>
+              </Route>
+            </Switch>
+          </Router>
+        </div>
+    )
   }
 }
 
