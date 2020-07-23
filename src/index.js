@@ -6,6 +6,7 @@ import './index.scss';
 import './scss/title.scss';
 import './scss/btn.scss';
 import './scss/eye.scss';
+import './scss/animate.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
