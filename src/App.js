@@ -26,11 +26,6 @@ class App extends Component {
                   exact
                   path="/">
                 <PageSingIn/>
-                <PageSingUp/>
-              </Route>
-              <Route
-                  path="/sing-in">
-                <PageSingIn/>
               </Route>
               <Route
                   path="/sing-up">

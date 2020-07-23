@@ -1,0 +1,13 @@
+@import "vars";
+
+.eye {
+  cursor: pointer;
+  stroke: $gray3;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  &:hover {
+    opacity: .7;
+  }
+}
