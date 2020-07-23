@@ -14,11 +14,21 @@
   padding: 12px;
   text-align: center;
   text-transform: uppercase;
+  transition: opacity .3s linear;
 
-
+  &:hover {
+    opacity: .85;
+    transition: opacity .3s linear;
+  }
 
   &:disabled {
     background-color: $gray1;
     cursor: no-drop;
+    transition: background-color .3s linear;
+  }
+
+  &:disabled:hover {
+    background-color: $gray4;
+    transition: background-color .3s linear;
   }
 }
