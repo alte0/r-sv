@@ -8,7 +8,12 @@
   stroke-linejoin: round;
   transition: stroke .3s linear;
 
-  &:hover {
+  &:not([class="eye--on"]):hover {
+    stroke: $black1;
+    transition: stroke .3s linear;
+  }
+
+  &--on {
     stroke: $black1;
     transition: stroke .3s linear;
   }
