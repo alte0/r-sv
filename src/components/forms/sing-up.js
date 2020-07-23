@@ -3,6 +3,7 @@ import {Link, withRouter } from "react-router-dom";
 import InpuMask from 'react-input-mask';
 import './form.scss';
 import {Success} from "../success/success";
+import { validateRegex } from "../../helpers/helpers";
 
 class FormSingUp extends Component {
     constructor(props) {
@@ -51,7 +52,7 @@ class FormSingUp extends Component {
     handleChangeEmail = (evt) => {
         const value = evt.target.value.trim();
         const emailRegex = /.+@.+\..+/;
-        const isValidEmail = emailRegex.test(value);
+        const isValidEmail = validateRegex(emailRegex, value);
 
         this.setState((state) => ({
             valueEmail: value,
@@ -68,7 +69,7 @@ class FormSingUp extends Component {
         const value = evt.target.value;
         const valueClearSpace = value.split(' ').join('').split('_').join('');
         const phoneRegex = new RegExp('^(([+]{0,1}\\d{2})|\\d?)[\\s-]?[0-9]{2}[\\s-]?[0-9]{3}[\\s-]?[0-9]{4}$');
-        const isValidPhone = phoneRegex.test(valueClearSpace);
+        const isValidPhone = validateRegex(phoneRegex, valueClearSpace);
 
         this.setState((state) => ({
             valueTel: valueClearSpace,
@@ -84,7 +85,7 @@ class FormSingUp extends Component {
     handleChangePswd = (evt) =>{
         const value = evt.target.value.trim();
         const pswdRegex = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})/;
-        const isValidPswd = pswdRegex.test(value);
+        const isValidPswd = validateRegex(pswdRegex, value);
 
         this.setState((state) => ({
             valuePswd: value,

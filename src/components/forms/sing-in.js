@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link } from "react-router-dom";
 import './form.scss';
 import { Success } from "../success/success";
+import { validateRegex } from "../../helpers/helpers";
 
 class FormSingIn extends Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class FormSingIn extends Component {
     handleChangePswd = (evt) =>{
         const value = evt.target.value.trim();
         const pswdRegex = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})/;
-        const isValidPswd = pswdRegex.test(value);
+        const isValidPswd = validateRegex(pswdRegex, value);
 
         this.setState((state) => ({
             valuePswd: value,
