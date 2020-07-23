@@ -41,6 +41,7 @@
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
     "optimize-css-assets-webpack-plugin": "5.0.3",
+    "password-crypt": "^2.2.0",
     "pnp-webpack-plugin": "1.6.4",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {Link } from "react-router-dom";
 import './form.scss';
 import { Success } from "../success/success";
-import { validateRegex } from "../../helpers/helpers";
+import { validateRegex, searchUser, cryptComparePswd } from "../../helpers/helpers";
+import { users } from '../../data/users'
 
 class FormSingIn extends Component {
     constructor(props) {
@@ -56,7 +57,17 @@ class FormSingIn extends Component {
 
     handleSubmit = (evt) => {
         evt.preventDefault();
-        this.setState({showSuccess: true});
+        const formData = new FormData(evt.target);
+        const findUser = searchUser(users, formData.get('login'));
+
+        if (findUser) {
+            cryptComparePswd(formData.get('pswd'), findUser['pswd'])
+                .then((isValid) => {
+                    if (isValid) {
+                        this.setState({showSuccess: true});
+                    }
+                })
+        }
     }
 
     render() {

@@ -3,7 +3,8 @@ import {Link, withRouter } from "react-router-dom";
 import InpuMask from 'react-input-mask';
 import './form.scss';
 import {Success} from "../success/success";
-import { validateRegex } from "../../helpers/helpers";
+import { validateRegex, cryptPswd, recordUser } from "../../helpers/helpers";
+import { users } from '../../data/users';
 
 class FormSingUp extends Component {
     constructor(props) {
@@ -115,12 +116,30 @@ class FormSingUp extends Component {
     handleSubmit = (evt) => {
         evt.preventDefault();
         const { history } = this.props;
+        const formData = new FormData(evt.target);
+        const pswd = formData.get('pswd');
+        const tel = this.state.valueTel;
 
-        this.setState({showSuccess: true});
+        cryptPswd(pswd)
+            .then((hashPswd)=> {
+                const user = {
+                    name: formData.get('name'),
+                    login: formData.get('login'),
+                    email: formData.get('email'),
+                    tel,
+                    pswd: hashPswd,
+                }
 
-        setTimeout(() => {
-            history.push("/")
-        }, 3500)
+                this.setState({showSuccess: true});
+
+                recordUser(users, user);
+                setTimeout(() => {
+                    history.push("/")
+                }, 3500)
+            })
+            .catch((e) => {
+                console.log('e')
+            })
     }
 
     render() {
