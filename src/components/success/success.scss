@@ -13,8 +13,22 @@
   z-index: 1;
 
   &__svg {
-    animation: success 2s linear;
   }
+
+  &__path {
+    stroke-dasharray: 835px;
+    stroke-dashoffset: 835px;
+    animation-delay: 0ms, 500ms, 1500ms;
+    animation-duration: 500ms, 1000ms, 500ms;
+    fill-opacity: 0;
+    stroke-opacity: 0;
+    animation-timing-function: linear;
+    transition-timing-function: linear;
+    animation-name: StrokeIn,DrawStroke,FillIn;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+
   &__text {
     display: block;
     font-style: normal;
@@ -23,11 +37,27 @@
     line-height: 47px;
   }
 }
-@keyframes success {
-  0% { transform: scale(1);opacity: 1; }
-  25% { transform: scale(0.75); }
-  50% { transform: scale(1.25); }
-  75% { transform: scale(1.5);opacity: 0 }
-  100% { transform: scale(1);opacity: 1; }
+
+@keyframes DrawStroke {
+  to {
+    stroke-dashoffset:0
+  }
 }
 
+@keyframes StrokeIn {
+  0% {
+    stroke-opacity:0
+  }
+  to {
+    stroke-opacity:1
+  }
+}
+
+@keyframes FillIn {
+  0% {
+    fill-opacity:0
+  }
+  to {
+    fill-opacity:1
+  }
+}
