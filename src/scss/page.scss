@@ -2,12 +2,6 @@
   position: absolute;
   left: 15px;
   right: 15px;
-  transform: translateY(0);
-
-  &--sing-in {
-    transform: translateY(-30%);
-    transition: transform 250ms;
-  }
 
   &-enter {
     opacity: 0;

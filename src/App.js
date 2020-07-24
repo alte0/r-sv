@@ -21,7 +21,7 @@ return (
                     classNames="page"
                     unmountOnExit
                 >
-                  <div className="page page--sing-in">
+                  <div className="page">
                     <PageSingIn/>
                   </div>
                 </CSSTransition>
