@@ -28,7 +28,6 @@ return (
             )}
           </Route>
           <Route
-              exact
               path="/sing-up">
               {({ match }) => (
                   <CSSTransition
