@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './scss/fonts.scss';
 import './scss/visually-hidden.scss';
 import './index.scss';
-import './scss/title.scss';
 import './scss/btn.scss';
 import './scss/eye.scss';
 import './scss/animate.scss';
