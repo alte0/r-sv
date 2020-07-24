@@ -5,7 +5,7 @@ import  { Title } from '../components/title/title';
 export const PageSingUp = () => {
     return (
         <>
-            <Title/>
+            <Title title={"Регистрация"}/>
             <FormSingUp/>
         </>
     )
