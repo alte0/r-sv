@@ -1,11 +1,11 @@
 import React from "react";
 import FormSingUp from '../components/forms/sing-up';
+import  { Title } from '../components/title/title';
 
 export const PageSingUp = () => {
     return (
         <>
-            <h1 className={"title"}>Регистрация</h1>
-            <p className={"title__desc"}>Введите свои данные</p>
+            <Title/>
             <FormSingUp/>
         </>
     )
