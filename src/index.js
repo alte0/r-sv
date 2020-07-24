@@ -5,7 +5,7 @@ import './scss/visually-hidden.scss';
 import './index.scss';
 import './scss/btn.scss';
 import './scss/eye.scss';
-import './scss/animate.scss';
+import './scss/page.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
