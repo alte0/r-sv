@@ -18,10 +18,10 @@ return (
                 <CSSTransition
                     in={match != null}
                     timeout={300}
-                    classNames="animate"
+                    classNames="page"
                     unmountOnExit
                 >
-                  <div className="animate">
+                  <div className="page page--sing-in">
                     <PageSingIn/>
                   </div>
                 </CSSTransition>
@@ -33,10 +33,10 @@ return (
                   <CSSTransition
                       in={match != null}
                       timeout={300}
-                      classNames="animate"
+                      classNames="page"
                       unmountOnExit
                   >
-                    <div className="animate">
+                    <div className="page">
                       <PageSingUp/>
                     </div>
                   </CSSTransition>

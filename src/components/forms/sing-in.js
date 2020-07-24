@@ -81,7 +81,7 @@ class FormSingIn extends Component {
                                onChange={this.handleChangeLogin}/>
                         <label className={"form__label form__label--absolute"} htmlFor={"login"}>Email или номер телефона</label>
                     </div>
-                    <div className={"form__field"}>
+                    <div className={"form__field form__field--mb40"}>
                         <input className={"form__input"}  name={"pswd"} id={"pswd"} required
                                type={this.state.isTypeInputText ? "text" : "password" }
                                value={this.state.valuePswd}
