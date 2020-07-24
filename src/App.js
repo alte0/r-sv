@@ -10,7 +10,7 @@ import './App.scss';
 const App = () => {
 return (
     <div className={"app-container"}>
-      <Router>
+      <Router basename="/r-sv/" >
           <Route
               exact
               path="/">
